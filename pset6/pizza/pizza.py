@@ -7,13 +7,16 @@ def main():
     check_csv(filename)
 
     try:
-        with open(filename,'r') as file:
-            reader=csv.reader(file)
-            table=[]
-            headers=list(next(reader))
+        with open(filename, 'r') as file:
+            reader = csv.reader(file)
+            table = []
+            headers = list(next(reader))
             for row in reader:
                 table.append([row[0], row[1], row[2]])
-                print(tabulate(table, headers, tablefmt="grid"))
+
+        # Move print statement outside the loop
+        print(tabulate(table, headers, tablefmt="grid"))
+
     except FileNotFoundError:
         exit('File does not exist')
     except Exception as arg:
@@ -24,8 +27,8 @@ def get_filename(arguments):
         if len(arguments) < 2:
             exit('Too few command-line arguments')
         else:
-            exit('Too mant command-line arguments')
-    return argv[1]
+            exit('Too many command-line arguments')
+    return arguments[1]
 
 def check_csv(filename):
     dot = filename.find('.')
