@@ -1,6 +1,7 @@
 def main():
     in_time = input('What time is it? ').strip()
     time = convert(in_time)
+    # print(f'{in_time} converts to {time:.2f}')
     if 7 <= time and time <= 8:
         print('breakfast time')
     elif 12 <= time and time <= 13:
@@ -14,18 +15,18 @@ def convert(time):
     if time.rfind('a.m.') != -1:
         time= time[:time.rfind('a')]
         hours, minutes = time.split(':')
-        converted_time = float(hours)+(float(minutes)/600)
+        converted_time = float(hours)+(float(minutes)/60)
         return converted_time
 
     elif time.rfind('p.m.') != -1:
         time= time[:time.rfind('p')]
         hours, minutes = time.split(':')
-        converted_time = 12+float(hours)+(float(minutes)/600)
+        converted_time = 12+float(hours)+(float(minutes)/60)
         return converted_time
 
     else :
         hours, minutes = time.split(':')
-        converted_time = float(hours)+(float(minutes)/600)
+        converted_time = float(hours)+(float(minutes)/60)
         return converted_time
 
 
