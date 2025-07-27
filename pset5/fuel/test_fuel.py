@@ -5,6 +5,7 @@ def test_input():
     assert convert('1/2') == 50
     assert convert('1/1') == 100
     assert convert('0/10') == 0
+    assert convert('1/4') == 25
 
 def test_errors():
     with pytest.raises(ZeroDivisionError):

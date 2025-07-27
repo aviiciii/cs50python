@@ -38,7 +38,8 @@ while True:
             break
     except:
         pass
-elif date_type == 1:
+
+if date_type == 1:
     month_no = str(month.index(date[0])+1)
     print(date[2].zfill(4), month_no.zfill(2), date[1].zfill(2), sep='-')
 

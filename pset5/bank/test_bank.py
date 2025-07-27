@@ -14,6 +14,7 @@ def test_h():
 def test_noH():
     assert value('whats up, buddy') == 100
     assert value('what the he!@') == 100
+    assert value('what the eff') == 100
 
 def test_capital():
     assert value('HELLO') == 0
