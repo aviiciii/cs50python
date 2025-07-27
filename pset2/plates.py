@@ -26,13 +26,10 @@ def is_valid(s):
             first_num = s.index(character)
             break
     # check if there is no alphabet after first num
-    for character in s:
-        if s.index(character)<= first_num:
-            pass
-        else:
-            if character.isalpha():
-                return False
-    #all conditions satisfied
+    for character in s[first_num:]:
+        if character.isalpha():
+            return False
+    # all conditions satisfied
     return True
 
 
