@@ -21,7 +21,7 @@ else :
 
 
 
-# this method is more easier and allows a broader list instead of if-else everything.
+# this method is easier and allows a broader list instead of if-else everything.
 types = {
     "gif": "image/gif",
     "jpg": "image/jpeg",
